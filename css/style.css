@@ -1,72 +1,76 @@
 /* Initial settings to prevent default margins messing up anything */
 * {
-    margin: 0;
+   margin: 0;
 }
+
 /* Initial settings to pull the body of page down to the bottom of the page */
 html, body {
     height: 100%;
     overflow: hidden;
 }
 
+/* We want the sidebars to take the whole screen */
 .sidebar {
     display: flex;
     height: 100%;
 }
-
+/* The left one is for navigation */
 .sidebar__sidebar {
-    width: 25%;
+    background-color: rgb(66, 64, 64);
     border-right: 3px black solid;
+    margin-right: 5px;
     text-align: center;
-} .sidebar__sidebar > * {
+    width: 205px;
+}
+/* Customize each item in the sidebar to stand out from better */
+.sidebar__sidebar > * {
+    color: white;
+    display: block;
     padding-top: 10px;
     padding-bottom: 10px;
-    display: block;
 }
-
+/* Take the remaining width and make it scrollable */
 .sidebar__main {
-    /* Take the remaining width */
     flex: 1;
-
-    /* Make it scrollable */
     overflow: auto;
 }
 
 /* Change the styling of the links on the left sidebar */
 a {
     text-decoration: none;
-    color: black;
-} a:hover {
-    color: blue;
-} aside > a:first-of-type, aside > a:last-of-type {
-    padding-top: 100px;
+}
+/* Let the user know which link they would be using if clicked */
+a:hover {
+    color: rgb(182, 177, 177);
+}
+/* Space out the navigation links */
+aside > a:nth-child(2), aside > a:last-of-type {
+    margin-top: 100px;
 }
 
+/* Put a card in the next row when previous cards take all width */
 .card-layout {
     display: flex;
-
-    /* Put a card in the next row when previous cards take all width */
     flex-wrap: wrap;
-
-    margin-left: -0.25rem;
     margin-right: -0.25rem;
-
-    background-color: blue;
+    margin-left: -0.25rem;
 }
-
+/* There will be 3 cards per row */
 .card-layout__item {
-    background-color: yellow;
-    /* There will be 3 cards per row */
     flex-basis: 33.33333%;
-
-    padding-left: 0.25rem;
     padding-right: 0.25rem;
+    padding-left: 0.25rem;
 }
 
 .mainPage {
+    /* We will show depending on which the user navigates to */
     display: none;
-    width: 100%;
+    /* Make the page stretch to the whole page */
     height: 100%;
-    background-color: red;
-} .mainPage#home {
+    width: 100%;
+}
+
+.mainPage#home {
+    /* The home page will be the default page */
     display: block;
 }
